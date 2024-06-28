@@ -10,7 +10,7 @@
            
         },
         mounted() {
-            console.log('Component mounted.'+ this.user)
+
         },
 
         computed: {
@@ -21,11 +21,49 @@
             emiteCortesia(){
                 let self = this
 
-                axios.post('emite-cortesia-usuario', {nome: self.nome, telefone: self.telefone})
-                .then((response) => {
-                    console.log('response: ', response)
-                }).catch((error) => {
-                    console.log('Error: ', error)
+                if(self.nome == null || self.nome == ''){
+                    self.makeToast('warning')
+                }else if(self.telefone == null || self.telefone == ''){
+                    self.makeToast2('warning')
+                }else{
+                    axios.post('emite-cortesia-usuario', {nome: self.nome, telefone: self.telefone})
+                    .then((response) => {
+                        console.log('response: ', response)
+                        if(response.data.ref == 1){
+                            self.makeToast3('danger')
+                        }else{
+                            this.$bvModal.show('modal-conclusao')
+                            self.nome = null
+                            self.telefone = null
+                        }
+                    }).catch((error) => {
+                        console.log('Error: ', error)
+                    })
+                }
+
+            },
+
+            makeToast(variant = null) {
+                this.$bvToast.toast('Informe o nome para concluir.', {
+                title: `Atenção!`,
+                variant: variant,
+                solid: true
+                })
+            },
+
+            makeToast2(variant = null) {
+                this.$bvToast.toast('Informe o telefone para concluir.', {
+                title: `Atenção!`,
+                variant: variant,
+                solid: true
+                })
+            },
+
+            makeToast3(variant = null) {
+                this.$bvToast.toast('Participante já concluiu a inscrição.', {
+                title: `Atenção!`,
+                variant: variant,
+                solid: true
                 })
             }
         }
@@ -105,16 +143,26 @@
         <b-row class="m-2">
             <b-col lg="4">
                 <label for="telefone"><b>Telefone</b></label>
-                <b-form-input id="telefone" v-model="telefone" class="form-control"></b-form-input>
+                <b-form-input v-mask="'(##) #####-####'" id="telefone" v-model="telefone" class="form-control"></b-form-input>
             </b-col>
         </b-row>
 
         <b-row class="m-2">
             <b-col class="d-flex justify-content-end right">
-                <b-button pill variant="primary">Concluir</b-button>
+                <b-button pill variant="primary" @click="emiteCortesia">Concluir</b-button>
             </b-col>
         </b-row>
+
+        <b-modal id="modal-conclusao" size="sm" 
+        header-bg-variant="light"
+        body-bg-variant="light"
+        footer-bg-variant="light"
+        ok-only
+        ok-title="Fechar">
+            <h3 class="my-4" style="background-color: #f7f7f7;"><b style="background-color: #f7f7f7;">Obrigado por concluir a inscrição, compareça ao estande para retirar a recompesa.</b></h3>
+        </b-modal>
     </div>
+
 </template>
 
 <style>

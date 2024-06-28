@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('home', 'PagesController@home')->name('home');
+Route::post('emite-cortesia-usuario', 'HomeController@emiteCortesiaUsuario')->name('home');
