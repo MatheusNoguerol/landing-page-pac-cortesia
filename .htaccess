@@ -3,8 +3,8 @@ RewriteCond %{HTTPS}  !=on
 RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 
 
-RewriteCond %{HTTP_HOST} ^nog.petpeloazul.com.br$ [NC,OR]
-    RewriteCond %{HTTP_HOST} ^www.nog.petpeloazul.com.br$
+RewriteCond %{HTTP_HOST} ^erp.petpeloazul.com.br$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^www.erp.petpeloazul.com.br$
     RewriteCond %{REQUEST_URI} !public/
     RewriteRule (.*) public/$1 [L]
   
