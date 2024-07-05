@@ -74,8 +74,13 @@
     <div class="container">
         <b-row class="m-2">
             <b-col class="text-center d-flex justify-content-center align-items-center">
-                <div id="logo-educaterra">
+                <div id="logo-educaterra" class="mt-3">
                     <img class="img-fluid mx-auto rounded" :src="require('/xampp/htdocs/landing-page-pac-cortesia/public/images/logoRedonda.png')" alt="imagem">
+                </div>
+            </b-col>
+            <b-col class="text-center d-flex justify-content-center align-items-center">
+                <div id="logo-educaterra">
+                    <img class="img-fluid mx-auto rounded" :src="require('/xampp/htdocs/landing-page-pac-cortesia/public/images/logoEducaTerra.png')" alt="imagem">
                 </div>
             </b-col>
         </b-row>
@@ -104,8 +109,9 @@
                         Aplicativo PAC <br>
                     </div>
 
-                    <div class="card-body">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque animi beatae culpa! Rem soluta blanditiis sapiente doloremque voluptatum pariatur ratione porro earum, at dignissimos reiciendis quas unde inventore obcaecati! Distinctio.</p>
+                    <div class="card-body text-center">
+                        <p>Um app que vai nos ajudar a tornar o mundo mais verde.</p>
+                        <p>E para dar início a essa mudança retire a sua <b>recompensa</b> aqui com gente!</p>
 
                         <div id="app-pac" class="text-center">
                             <img class="img-fluid mx-auto rounded" :src="require('/xampp/htdocs/landing-page-pac-cortesia/public/images/1.jpg')" alt="imagem">
