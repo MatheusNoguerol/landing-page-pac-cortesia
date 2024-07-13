@@ -33,7 +33,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('css/toastr.css') }}" rel="stylesheet"> -->
 
-    <link rel="icon" href="{{ asset('images/logoPac.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logoEducaTerra.ico') }}" type="image/x-icon">
     
 
 </head>

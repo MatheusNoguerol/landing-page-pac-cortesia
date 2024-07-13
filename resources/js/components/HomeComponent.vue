@@ -160,7 +160,7 @@
         footer-bg-variant="light"
         ok-only
         ok-title="Fechar">
-            <h3 class="my-4" style="background-color: #f7f7f7;"><b style="background-color: #f7f7f7;">Obrigado por concluir a inscrição, compareça ao estande para retirar a recompesa.</b></h3>
+            <h3 class="my-4" style="background-color: #f7f7f7;"><b style="background-color: #f7f7f7;">Obrigado por concluir a inscrição, compareça ao estande para retirar a recompensa.</b></h3>
         </b-modal>
     </div>
 
