@@ -75,7 +75,7 @@
         <b-row class="m-2">
             <b-col class="text-center d-flex justify-content-center align-items-center">
                 <div id="logo-educaterra">
-                    <img class="img-fluid mx-auto rounded" :src="require('/xampp/htdocs/landing-page-pac-cortesia/public/images/logoEducaTerra.png')" alt="imagem">
+                    <img class="img-fluid mx-auto rounded" :src="require('/laragon/www/landing-page-pac-cortesia/public/images/logoEducaTerra.png')" alt="imagem">
                 </div>
             </b-col>
         </b-row>
@@ -109,7 +109,7 @@
                         <p>E para dar início a essa mudança retire a sua <b>recompensa</b> aqui conosco!</p>
 
                         <div id="app-pac" class="text-center">
-                            <img class="img-fluid mx-auto rounded" :src="require('/xampp/htdocs/landing-page-pac-cortesia/public/images/mockupteste.png')" alt="imagem">
+                            <img class="img-fluid mx-auto rounded" :src="require('/laragon/www/landing-page-pac-cortesia/public/images/mockup1.png')" alt="imagem">
                         </div>
                     </div>
 
