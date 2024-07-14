@@ -25,6 +25,9 @@
                     self.makeToast('warning')
                 }else if(self.telefone == null || self.telefone == ''){
                     self.makeToast2('warning')
+                }
+                else if(self.telefone.length < 15){
+                    self.makeToast4('warning')
                 }else{
                     axios.post('emite-cortesia-usuario', {nome: self.nome, telefone: self.telefone})
                     .then((response) => {
@@ -65,7 +68,15 @@
                 variant: variant,
                 solid: true
                 })
-            }
+            },
+
+            makeToast4(variant = null) {
+                this.$bvToast.toast('Número de telefone inválido.', {
+                title: `Atenção!`,
+                variant: variant,
+                solid: true
+                })
+            },
         }
     }
 </script>
@@ -144,7 +155,7 @@
         <b-row class="m-2">
             <b-col lg="4">
                 <label for="telefone"><b>Telefone</b></label>
-                <b-form-input v-mask="'(##) #####-####'" id="telefone" v-model="telefone" class="form-control"></b-form-input>
+                <b-form-input v-mask="'(##) #####-####'" @change="validaTelefone()" id="telefone" v-model="telefone" class="form-control"></b-form-input>
             </b-col>
         </b-row>
 
